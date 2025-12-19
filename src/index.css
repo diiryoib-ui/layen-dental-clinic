@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-slate-800 antialiased bg-slate-50;
+  }
+
+  ::selection {
+    @apply bg-primary text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-gray-900;
+  }
+}
+
+/* ... rest of the custom styles adjustments if any ... */
+/* Note: tailwind v4 automatically handles imports. */
+/* We need to keep the theme config. v4 allows theme config in CSS but let's see if legacy config works. It should. */
+/* Actually, with v4, usually we move config to CSS variables or keep legacy. */
+/* Let's stick to the simplest replacement. */
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white rounded-md shadow-md hover:bg-blue-800 transition-colors duration-300 font-medium;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-primary border border-primary rounded-md shadow-sm hover:bg-blue-50 transition-colors duration-300 font-medium;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
